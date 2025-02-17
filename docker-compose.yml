@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+    mysql:
+        image: mysql:5.7
+        container_name: youcommunity_mysql
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: YouCommunity
+            MYSQL_USER: Nizar
+            MYSQL_PASSWORD: Nizar2005nizar#
+            MYSQL_ROOT_PASSWORD: rootpassword
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql_data:/var/lib/mysql
+
+volumes:
+    mysql_data:
